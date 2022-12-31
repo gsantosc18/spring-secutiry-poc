@@ -1,0 +1,9 @@
+spring:
+  main:
+    banner-mode: OFF
+  data:
+    rest:
+      base-path: /api
+    mongodb:
+      uri: mongodb://localhost:27017
+      database: rest-repository
