@@ -24,8 +24,8 @@ public class UserService implements UserDetailsService {
 
     public CreatedUserDto save(UserDto userDto) {
         User user = new User(userDto.name(), passwordEncoder.encode(userDto.password()));
-        user.setRoleTypes(userDto.roleTypes());
+        user.setRoles(userDto.roles());
         User savedUser = userRepository.save(user);
-        return new CreatedUserDto(savedUser.getId(), savedUser.getName(), savedUser.getRoleTypes(), savedUser.getCreatedAt());
+        return new CreatedUserDto(savedUser.getId(), savedUser.getName(), savedUser.getRoles(), savedUser.getCreatedAt());
     }
 }

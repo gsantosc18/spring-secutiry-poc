@@ -23,7 +23,7 @@ public class User implements UserDetails {
     private String id;
     private String name;
     private String password;
-    private Set<RoleType> roleTypes;
+    private Set<RoleType> roles;
 
     @CreatedDate
     private LocalDateTime createdAt;
@@ -40,7 +40,7 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return roleTypes.stream().map(roleType -> new SimpleGrantedAuthority(roleType.getRole().toUpperCase())).collect(Collectors.toList());
+        return roles.stream().map(roleType -> new SimpleGrantedAuthority(roleType.getRole().toUpperCase())).collect(Collectors.toList());
     }
 
     @Override

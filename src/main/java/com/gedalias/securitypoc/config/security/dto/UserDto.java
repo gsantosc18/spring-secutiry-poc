@@ -12,5 +12,5 @@ public record UserDto(
    @NotBlank(message = "É obrigatório fornecer uma senha")
    String password,
    @NotEmpty(message = "É obrigatório fornecer uma lista de funções")
-   Set<RoleType> roleTypes
+   Set<RoleType> roles
 ) {}
